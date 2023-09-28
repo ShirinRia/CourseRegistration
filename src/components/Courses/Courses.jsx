@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Course from "./Course";
 
 
-const Courses = () => {
+const Courses = ({handleregcourse,handlecredit}) => {
     const [Courses, setCourses]=useState([])
     useEffect(()=>{
         fetch('data.json')
@@ -16,6 +16,8 @@ const Courses = () => {
             <Course 
             key={course.id}
             course={course}
+            handleregcourse={handleregcourse}
+            handlecredit={handlecredit}
             >
 
             </Course>
