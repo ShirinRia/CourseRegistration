@@ -3,17 +3,18 @@ import PropTypes from 'prop-types';
 const Course = ({course}) => {
     const {course_name,course_description,price,credit,image_url} = course
     return (
-        <div className="card w-[335px] bg-base-100 shadow-xl">
-            <figure className="px-5 pt-5">
+
+        <div className="card card-compact w-[312px] bg-base-100 shadow-xl">
+        <figure className="px-5 pt-5">
                 <img src={image_url} alt={course_name} className="rounded-xl w-full" />
             </figure>
-            <div className="card-body items-center text-left">
-                <h2 className="card-title text-lg font-semibold text-left">{course_name}</h2>
-                <p>{course_description}</p>
-                <div className="card-actions w-full">
-                   <button className="btn btn-primary w-full bg-[#2F80ED] border-none">Select</button>
-                </div>
-            </div>
+        <div className="card-body space-y-2">
+        <h2 className="text-lg font-semibold">{course_name}</h2>
+        <p className='text-sm font-normal'>{course_description}</p>
+        <div className="card-actions">
+        <button className="btn text-white w-full bg-[#2F80ED] border-none">Select</button>
+        </div>
+        </div>
         </div>
         
     );

@@ -11,13 +11,13 @@ function App() {
 
       </Head>
 
-      <main>
+      <main className='mb-20 mx-9'>
         <section className='flex gap-6'>
-          <Courses classname='w-2/3'>
+          <Courses >
 
           </Courses>
 
-          <Cart className='w-1/3'>
+          <Cart className='flex-grow-1'>
 
           </Cart>
         </section>
