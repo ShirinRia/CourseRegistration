@@ -8,9 +8,12 @@ const Course = ({course,handleregcourse,handlecredit,checkcredit}) => {
     const {course_name,course_description,price,credit,image_url} = course;
     const t=()=>{
         handleregcourse(course) ; 
-        handlecredit(credit); 
-        if(checkcredit+credit>20)
-        toast("Total Credit hour limit is 20!")
+        // handlecredit(credit); 
+        if(checkcredit+credit>20)  
+        {
+            toast("Total Credit hour limit is 20!")
+           
+        }
 
     }
     

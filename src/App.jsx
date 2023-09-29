@@ -11,19 +11,23 @@ function App() {
   const [credit,setcredit]=useState(0);
 
   const handleregcourse=(course)=>{
+
     const newregcourse=[...regcourse,course];
-    setregcourse(newregcourse)
+    const f=newregcourse.filter(n=>n.id === course.id)
+    console.log(f.length);
+    if(f.length===1){
+      setregcourse(newregcourse)
+      handlecredit(course.credit)
+    }
+    
   }
-// const handletoasting=(newcredit)=>{
-//   toasting=true
-//   console.log(newcredit,toasting)
-// }
+
   const handlecredit=(time)=>{
     const newcredit=credit+time;
    
    if(newcredit<=20){
       setcredit(newcredit)
-      // console.log(newcredit)
+      
     }
  
     
@@ -60,17 +64,4 @@ function App() {
   )
 }
 
-
-
-
-// function App(){
-//   const notify = () => toast("Wow so easy!");
-
-//   return (
-//     <div>
-//       <button onClick={notify}>Notify!</button>
-//       <ToastContainer />
-//     </div>
-//   );
-// }
 export default App
