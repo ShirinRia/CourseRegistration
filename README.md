@@ -5,6 +5,7 @@ Project features
 3. Automated reminders if course credit limit is crossed.
 
 State Management in this project:
+
 Prop Drilling: Passing data from a parent component to a child component through props. Prop Drilling can become cumbersome when dealing with deeply nested components.
 Such as for showing course card course data is passed from Parent component (Courses.jsx) to Child component (Course.jsx).
 
