@@ -13,7 +13,7 @@ const Cart = ({regcourse,credit}) => {
 
             <div className="py-4 border-b-2">
                 <div className="w-max ">
-                <h3 className="text-xl font-bold">
+                <h3 className="text-xl font-bold w-max ">
                      Course Name
                 </h3>
                 </div>

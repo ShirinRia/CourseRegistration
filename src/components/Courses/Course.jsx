@@ -1,16 +1,23 @@
 import PropTypes from 'prop-types';
-// import { FiDollarSign } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FaDollarSign } from 'react-icons/fa'
 import {BsBook} from 'react-icons/bs'
-const Course = ({course,handleregcourse,handlecredit}) => {
-
+const Course = ({course,handleregcourse,handlecredit,checkcredit}) => {
+//    console.log(snakebar)
     const {course_name,course_description,price,credit,image_url} = course;
+    const t=()=>{
+        handleregcourse(course) ; 
+        handlecredit(credit); 
+        if(checkcredit+credit>20)
+        toast("Total Credit hour limit is 20!")
 
-
+    }
+    
     return (
 
-        <div className="card card-compact w-[312px] bg-base-100 shadow-xl">
-        <figure className="px-5 pt-5">
+        <div className="card card-compact w-[312px] bg-base-100">
+        <figure className="px-4 pt-4">
                 <img src={image_url} alt={course_name} className="rounded-xl w-full" />
             </figure>
         <div className="card-body space-y-2">
@@ -26,7 +33,7 @@ const Course = ({course,handleregcourse,handlecredit}) => {
             </p>
         </div>
         <div className="card-actions">
-        <button onClick={()=>{handleregcourse(course) ; handlecredit(credit)}} className="btn text-white w-full bg-[#2F80ED]  hover:text-[#2F80ED] hover:bg-white hover:border-2">Select</button>
+        <button onClick={t} className="btn text-white w-full bg-[#2F80ED]  hover:text-[#2F80ED] hover:bg-white hover:border-2">Select</button>
         </div>
         </div>
         </div>

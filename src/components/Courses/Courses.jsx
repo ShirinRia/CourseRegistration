@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Course from "./Course";
 
 
-const Courses = ({handleregcourse,handlecredit}) => {
+const Courses = ({handleregcourse,handlecredit,checkcredit}) => {
     const [Courses, setCourses]=useState([])
+    // console.log(snakebar)
     useEffect(()=>{
         fetch('data.json')
         .then(res=>res.json())
@@ -18,6 +19,7 @@ const Courses = ({handleregcourse,handlecredit}) => {
             course={course}
             handleregcourse={handleregcourse}
             handlecredit={handlecredit}
+            checkcredit={checkcredit}
             >
 
             </Course>
