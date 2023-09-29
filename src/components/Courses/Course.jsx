@@ -3,19 +3,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaDollarSign } from 'react-icons/fa'
 import {BsBook} from 'react-icons/bs'
-const Course = ({course,handleregcourse,handlecredit,checkcredit}) => {
-//    console.log(snakebar)
-    const {course_name,course_description,price,credit,image_url} = course;
-    const t=()=>{
-        handleregcourse(course) ; 
-        // handlecredit(credit); 
-        if(checkcredit+credit>20)  
-        {
-            toast("Total Credit hour limit is 20!")
-           
-        }
+const Course = ({course, handleregcourse, checkcredit}) => {
+    
 
-    }
+    const {course_name, course_description, price, credit, image_url} = course;
+   
     
     return (
 
@@ -36,19 +28,32 @@ const Course = ({course,handleregcourse,handlecredit,checkcredit}) => {
             </p>
         </div>
         <div className="card-actions">
-        <button onClick={t} className="btn text-white w-full bg-[#2F80ED]  hover:text-[#2F80ED] hover:bg-white hover:border-2">Select</button>
+        <button onClick={()=>{
+        handleregcourse(course) ;  
+       
+        if(checkcredit+credit>20)  
+        {
+           toast("Total Credit hour limit is 20!")
+        }
+        
+    }}
+    
+    className="btn text-white w-full bg-[#2F80ED]  hover:text-[#2F80ED] hover:bg-white hover:border-2">Select</button>
+    <ToastContainer />
         </div>
         </div>
         </div>
         
     );
 };
-Course.prototype = {
+Course.propTypes = {
+    course: PropTypes.object,
     course_name: PropTypes.string,
     course_description: PropTypes.string,
     price: PropTypes.number,
     credit: PropTypes.number,
     image_url: PropTypes.string,
-    course: PropTypes.object,
+    handleregcourse:PropTypes.func,
+    checkcredit:PropTypes.number,
 }
 export default Course;

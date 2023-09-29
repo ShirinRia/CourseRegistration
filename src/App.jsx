@@ -9,15 +9,17 @@ function App() {
   // const [toasting,settoasting]=useState(false)
   // let toasting=false
   const [credit,setcredit]=useState(0);
-
+  
   const handleregcourse=(course)=>{
 
     const newregcourse=[...regcourse,course];
     const f=newregcourse.filter(n=>n.id === course.id)
-    console.log(f.length);
-    if(f.length===1){
+    
+  const len=f.length;
+    if(len===1){
       setregcourse(newregcourse)
       handlecredit(course.credit)
+      // console.log(f.length)
     }
     
   }
@@ -30,7 +32,6 @@ function App() {
       
     }
  
-    
   }
 
   return (
@@ -42,13 +43,13 @@ function App() {
 
       <main className='pb-20 mx-9'>
          
-
         <section className='flex gap-6'>
        
           <Courses 
           handleregcourse={handleregcourse}
-          handlecredit={handlecredit}
+         
           checkcredit={credit}
+         
           >
           
           </Courses>
@@ -57,6 +58,7 @@ function App() {
           credit={credit}>
 
           </Cart>
+
         </section>
       </main>
      

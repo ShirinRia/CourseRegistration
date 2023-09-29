@@ -4,7 +4,7 @@ const Regcourse = ({showcourse}) => {
     const {course_name}=showcourse
     return (
        
-            <li>{course_name}</li>
+            <li className="text-sm">{course_name}</li>
        
     );
 };

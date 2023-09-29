@@ -3,7 +3,7 @@ import Regcourse from "./Regcourse";
 
 const Cart = ({regcourse,credit}) => {
     
-
+// console.log(credit)
     
     return (
         <div className="bg-white h-max  px-4 pb-6 rounded-lg">
@@ -18,7 +18,7 @@ const Cart = ({regcourse,credit}) => {
                 </h3>
                 </div>
                 
-                <ol className="list-decimal ml-5 text-base font-normal">
+                <ol className="list-decimal ml-5 text-base font-normal space-y-1">
                 {
                     regcourse.map(rcourse=>
                         <Regcourse

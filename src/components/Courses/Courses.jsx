@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import Course from "./Course";
+import PropTypes from 'prop-types'; // ES6
 
 
-const Courses = ({handleregcourse,handlecredit,checkcredit}) => {
+const Courses = ({handleregcourse,checkcredit}) => {
     const [Courses, setCourses]=useState([])
-    // console.log(snakebar)
+    // console.log(checkcredit)
     useEffect(()=>{
         fetch('data.json')
         .then(res=>res.json())
@@ -18,8 +19,9 @@ const Courses = ({handleregcourse,handlecredit,checkcredit}) => {
             key={course.id}
             course={course}
             handleregcourse={handleregcourse}
-            handlecredit={handlecredit}
+            
             checkcredit={checkcredit}
+           
             >
 
             </Course>
@@ -29,5 +31,13 @@ const Courses = ({handleregcourse,handlecredit,checkcredit}) => {
         
     );
 };
+Courses.propTypes = {
+    Courses:PropTypes.object,
+   
+    handleregcourse : PropTypes.func,
+    checkcredit : PropTypes.number,
+   
+  
 
+};
 export default Courses;
